@@ -1,0 +1,36 @@
+close all;clear all;
+L = 5; n = 20;
+xn = [ones(1,L), zeros(1,n-L)];
+Xk = dfs1(xn,n);
+magXk = abs([Xk(n/2+1:n) Xk(1:n/2+1)]);
+k = [-n/2:n/2];
+subplot(2,2,1); stem(k,magXk); axis([-n/2,n/2,-0.5,5.5])
+xlabel('k'); ylabel('Xtilde(k)'); 
+title('DFS of SQ. wave: L=5, N=20')
+
+L = 5; n = 40;
+xn = [ones(1,L), zeros(1,n-L)];
+Xk = dfs1(xn,n);
+magXk = abs([Xk(n/2+1:n) Xk(1:n/2+1)]);
+k = [-n/2:n/2];
+subplot(2,2,2); stem(k,magXk); axis([-n/2,n/2,-0.5,5.5])
+xlabel('k'); ylabel('Xtilde(k)'); 
+title('DFS of SQ. wave: L=5, N=40')
+
+L = 5; n = 60;
+xn = [ones(1,L), zeros(1,n-L)];
+Xk = dfs1(xn,n);
+magXk = abs([Xk(n/2+1:n) Xk(1:n/2+1)]);
+k = [-n/2:n/2];
+subplot(2,2,3); stem(k,magXk); axis([-n/2,n/2,-0.5,5.5])
+xlabel('k'); ylabel('Xtilde(k)'); 
+title('DFS of SQ. wave: L=5, N=60')
+
+L = 7; n = 60;
+xn = [ones(1,L), zeros(1,n-L)];
+Xk = dfs1(xn,n);
+magXk = abs([Xk(n/2+1:n) Xk(1:n/2+1)]);
+k = [-n/2:n/2];
+subplot(2,2,4); stem(k,magXk); axis([-n/2,n/2,-0.5,5.5])
+xlabel('k'); ylabel('Xtilde(k)'); 
+title('DFS of SQ. wave: L=7, N=60')
