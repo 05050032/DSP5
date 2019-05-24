@@ -1,0 +1,17 @@
+x=[1,1,1,1];
+w=[0:1:500]*2*pi/500;
+[H]=freqz(x,1,w);
+magH=abs(H);phaH=angle(H);phaH(126)=-47.5841*pi/180;
+N=8;w1=2*pi/N;k=0:N-1;
+x=[x,zeros(1,4)];
+X=dft1(x,N);
+magX=abs(X),phaX=angle(X)*180/pi;
+subplot(2,1,1);plot(w*N/(2*pi),magH,'--');
+axis([-0.1,8.1,-1,5]);hold on
+stem(k,magX);
+text(8.2,-1,'k');
+ylabel('|X(k)|');title('DEF 腔盟:N=8');
+hold off
+subplot(2,1,2);plot(w*N/(2*pi),phaH*180/pi,'--');
+axis([-0.1,8.1,-200,200]);hold on
+stem(k,phaX);
